@@ -6,7 +6,7 @@ import matplotlib.dates as mdates
 
 # https://www.chds.us/ssdb/dataset/
 
-file = 'K-12 SSDB (Public) - K-12 SSDB (Public) Linked.csv'
+file = 'data/K-12 SSDB (Public) - K-12 SSDB (Public) Linked.csv'
 df = pd.read_csv( file, escapechar='\\', skiprows=[0] )
 
 df['DateTime'] = pd.to_datetime( df['Date'], format='%m/%d/%Y', errors='coerce' )
@@ -25,6 +25,7 @@ plt.setp( ax.get_xticklabels(), rotation=45, ha='center' )
 
 ax.set_title( 'Shootings On School Property', fontsize=40 )
 ax.set_xlabel( 'Year', size=30 )
-ax.set_ylabel( 'Total Injured/Killed Victims', size=30 )
+ax.set_ylabel( 'Total Injured / Killed Victims', size=30 )
+ax.legend(loc='upper left')
 
 plt.show()
